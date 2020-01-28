@@ -18,7 +18,7 @@ def process(name):
 @app.route('/add/<a>')
 def add(a):
     time = datetime.utcnow() + timedelta(seconds=30)
-    add.apply_async((2, a), eta=time)
+    add.apply_async((2, int(a)), eta=time)
     return 'done'
 
 
