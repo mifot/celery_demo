@@ -1,11 +1,11 @@
 from config import celery
 
 
-@celery.task#(name='server.add')
+@celery.task
 def add(x, y):
     return x + y
 
 
-@celery.task#(name='server.reverse')
+@celery.task
 def reverse(string):
     return string[::-1]

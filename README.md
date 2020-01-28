@@ -18,6 +18,7 @@ before start program celery have to be started
 
 ## notes
 .delay() - add to queue
+.apply_async((2, int(a)), eta=time) - in given time in eta format
 
 celery just take a function and run it
 
@@ -27,5 +28,6 @@ the results of celery task can be stored in database [sqlite etc.] or Redis (add
 https://celery.readthedocs.io/en/latest/getting-started/first-steps-with-celery.html  
 https://flask.palletsprojects.com/en/1.1.x/patterns/celery/  
 https://vinta.ws/code/run-a-celery-task-at-a-specific-time.html  
+https://celery.readthedocs.io/en/latest/getting-started/first-steps-with-celery.html  
 http://docs.celeryproject.org/en/master/userguide/calling.html#eta-and-countdown  
 https://hub.docker.com/_/celery
