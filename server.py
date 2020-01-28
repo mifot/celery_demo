@@ -16,6 +16,7 @@ def process(name):
 @app.route('/add/<a>')
 def add(a):
     z = delegate.add(a)
+    logging.info(z)
     make_response(jsonify(z), 200)
 
 
