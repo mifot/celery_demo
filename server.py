@@ -20,7 +20,7 @@ def add(a):
 
 
 @app.route('/times/<a>')
-def add(a):
+def times(a):
     result = delegate.times(a)
     return make_response(jsonify(result), 200)
 
