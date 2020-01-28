@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from config import celery
 import tasks
 
 
