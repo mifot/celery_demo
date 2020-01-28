@@ -17,7 +17,7 @@ def process(name):
 def add(a):
     z = delegate.add(a)
     logging.info(z)
-    make_response(jsonify(z), 200)
+    return make_response(jsonify(z), 200)
 
 
 if __name__ == '__main__':
