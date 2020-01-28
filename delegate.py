@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
-from config import celery
-import tasks
+from tasks import *
 
 
 def reverse(name):
