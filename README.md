@@ -1,4 +1,4 @@
-# demo with rabbitMQ (Redis can be used as well)
+# Celery demo with rabbitMQ (Redis can be used as well)
 followed by https://www.youtube.com/playlist?list=PLXmMXHVSvS-DvYrjHcZOg7262I9sGBLFR
 
 ## instructions & tips
@@ -21,4 +21,11 @@ before start program celery have to be started
 
 celery just take a function and run it
 
-the results of celery task can be stored in database [Redis, sqlite etc.](add backend in config)
+the results of celery task can be stored in database [sqlite etc.] or Redis (add backend in config)
+
+## links
+https://celery.readthedocs.io/en/latest/getting-started/first-steps-with-celery.html  
+https://flask.palletsprojects.com/en/1.1.x/patterns/celery/  
+https://vinta.ws/code/run-a-celery-task-at-a-specific-time.html  
+http://docs.celeryproject.org/en/master/userguide/calling.html#eta-and-countdown  
+https://hub.docker.com/_/celery
