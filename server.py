@@ -1,7 +1,6 @@
 import config
 import delegate
 import logging
-import tasks
 
 app = config.app
 logging.basicConfig(level=logging.INFO)
