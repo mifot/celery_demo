@@ -1,0 +1,19 @@
+demo with rabbitMQ (Redis can be used as well)
+
+need to install rabbitmq server run:
+$ sudo apt-get install rabbitmq-server
+
+sometimes rabbitmq have to be restarted before first use
+$ sudo service rabbitmq-server restart
+
+to check status of rabbitMQ run:
+$ sudo rabbitmqctl status
+
+before start program celery have to be started
+$ celery -A {filename_with_config} worker --loglevel=info
+
+
+notes
+.delay() - add to queue
+
+celery just take a function and run it
