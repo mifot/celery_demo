@@ -20,6 +20,6 @@ def make_celery(app):
 
 
 app = Flask(__name__)
+app.config['CELERY_RESULT_BACKEND'] = 'amqp://localhost//'
 celery = make_celery(app)
 
-app.config['CELERY_RESULT_BACKEND'] = 'amqp://localhost//'
