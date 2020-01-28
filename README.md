@@ -17,7 +17,7 @@ before start program celery have to be started
 
 
 ## notes
-.delay() - add to queue
+.delay() - add to queue  
 .apply_async((2, int(a)), eta=time) - in given time in eta format
 
 celery just take a function and run it
