@@ -1,3 +1,4 @@
+from flask import Flask
 from celery import Celery
 
 
@@ -16,3 +17,9 @@ def make_celery(app):
 
     celery.Task = ContextTask
     return celery
+
+
+app = Flask(__name__)
+celery = make_celery(app)
+
+app.config['CELERY_RESULT_BACKEND'] = 'amqp://localhost//'

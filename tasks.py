@@ -1,11 +1,11 @@
-from celery import Celery
-import time
+from config import celery
 
-# celery config
-app = Celery('tasks', broker='amqp://localhost//')
 
-# add tasks
-@app.task
+@celery.task(name='app.add')
+def add(x, y):
+    return x + y
+
+
+@celery.task(name='app.reverse')
 def reverse(string):
-    time.sleep(15)
     return string[::-1]
