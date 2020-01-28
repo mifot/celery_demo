@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
-import config
-# import tasks
+import tasks
 
 
 def reverse(name):
