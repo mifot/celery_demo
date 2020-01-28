@@ -22,24 +22,36 @@ from datetime import datetime, timedelta
 
 
 def reverse(name):
-    reversed.delay(name)
+    reverse_task.delay(name)
     return 'done\n'
 
 
 def add(a):
-    a2 = int(a) + 2
+    result = int(a) + 2
     time = datetime.utcnow() + timedelta(seconds=30)
-    addd.apply_async((2, int(a)), eta=time)
-    return a2
+    add_task.apply_async((2, int(a)), eta=time)
+    return result
 
 
 @celery.task
-def addd(x, y):
+def times_task(x, y):
+    return x * y
+
+
+def times(a):
+    result = int(a) * 2
+    time = datetime.utcnow() + timedelta(seconds=10)
+    times_task.apply_async((2, int(a)), eta=time)
+    return result
+
+
+@celery.task
+def add_task(x, y):
     return x + y
 
 
 @celery.task
-def reversed(string):
+def reverse_task(string):
     return string[::-1]
 
 

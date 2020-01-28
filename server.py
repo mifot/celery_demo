@@ -15,9 +15,14 @@ def process(name):
 
 @app.route('/add/<a>')
 def add(a):
-    z = delegate.add(a)
-    logging.info(z)
-    return make_response(jsonify(z), 200)
+    result = delegate.add(a)
+    return make_response(jsonify(result), 200)
+
+
+@app.route('/times/<a>')
+def add(a):
+    result = delegate.times(a)
+    return make_response(jsonify(result), 200)
 
 
 if __name__ == '__main__':
