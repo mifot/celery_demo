@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_celery import make_celery
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
@@ -12,6 +13,18 @@ celery = make_celery(app)
 def process(name):
     reverse.delay(name)
     return 'done'
+
+
+@app.route('/add/<a>')
+def add(a):
+    time = datetime.utcnow() + timedelta(seconds=30)
+    add.apply_async((2, a), eta=time)
+    return 'done'
+
+
+@celery.task
+def add(x, y):
+    return x + y
 
 
 @celery.task(name='app.reverse')
