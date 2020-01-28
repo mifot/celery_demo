@@ -14,6 +14,8 @@ to check status of rabbitMQ run:
 
 before start program celery have to be started
 > $ celery -A {filename_with_config} worker --loglevel=info
+ex.
+> $ celery -A delegate.celery worker --loglevel=info
 
 
 ## notes
