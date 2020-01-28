@@ -27,7 +27,7 @@ def reverse(name):
 
 
 def add(a):
-    a2 = a + 2
+    a2 = int(a) + 2
     time = datetime.utcnow() + timedelta(seconds=30)
     addd.apply_async((2, int(a)), eta=time)
     return a2

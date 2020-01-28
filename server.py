@@ -14,8 +14,8 @@ def process(name):
 
 @app.route('/add/<a>')
 def add(a):
-    delegate.add(a)
-    return 'done'
+    z = delegate.add(a)
+    return z
 
 
 if __name__ == '__main__':
