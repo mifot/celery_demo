@@ -40,7 +40,7 @@ def times_task(x, y):
 
 def times(a):
     result = int(a) * 2
-    time = datetime.utcnow() + timedelta(seconds=10)
+    time = datetime.utcnow() - timedelta(seconds=1000)
     times_task.apply_async((2, int(a)), eta=time)
     return result
 
