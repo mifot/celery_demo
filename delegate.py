@@ -16,9 +16,21 @@
 #
 # version 2
 
-from config import celery
+# from config import celery
 from datetime import datetime, timedelta
 # import tasks
+
+# ------
+# to do test docker-compose
+
+from celery import Celery
+
+CELERY_BROKER_URL = 'amqp://rabbitmq:rabbitmq@rabbit:5672/'
+# CELERY_RESULT_BACKEND = 'rpc://'
+# Initialize Celery
+celery = Celery('worker', broker=CELERY_BROKER_URL)
+
+# ------
 
 
 def reverse(name):
