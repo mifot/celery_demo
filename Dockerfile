@@ -22,7 +22,7 @@ RUN ["pipenv", "install"]
 
 ENV FLASK_APP=server.py
 #
-RUN ["pipenv", "shell"]
+#RUN ["pipenv", "shell", "flask", "db", "upgrade"]
 #
-CMD ["python", "server.py"]
+CMD ["pipenv", "run", "python", "server.py"]
 #CMD python3 server.py
