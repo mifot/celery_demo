@@ -24,9 +24,9 @@ services:
   worker:
     build:
       context: .
-    hostname: worker
+    hostname: delegate
     entrypoint: celery
-    command: -A delegate worker --loglevel=info -Q delegate
+    command: -A delegate worker --loglevel=info
     volumes:
       - .:/app
     links:
