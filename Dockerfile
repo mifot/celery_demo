@@ -9,7 +9,7 @@ WORKDIR /app
 COPY . .
 RUN ["pipenv", "install"]
 
-RUN ["pipenv", "lock", "--requirements", ">", "requirements.txt"]
+RUN pipenv lock --requirements > requirements.txt
 RUN ["pip3", "install", "-r", "requirements.txt"]
 
 # setup env variables to initialize database
