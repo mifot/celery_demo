@@ -7,13 +7,13 @@ WORKDIR /app
 
 # copy only pipfiles to install dependencies
 COPY . .
-#RUN ["pipenv", "install"]
-ENV LC_ALL=C.UTF-8
-ENV LANG=C.UTF-8
+RUN ["pipenv", "install"]
+#ENV LC_ALL=C.UTF-8
+#ENV LANG=C.UTF-8
 
 
-RUN pipenv lock --requirements > requirements.txt
-RUN pip3 install -r requirements.txt
+#RUN pipenv lock --requirements > requirements.txt
+#RUN pip3 install -r requirements.txt
 
 # setup env variables to initialize database
 #
@@ -22,7 +22,7 @@ RUN pip3 install -r requirements.txt
 
 ENV FLASK_APP=server.py
 #
-##RUN ["pipenv", "run", "flask", "db", "upgrade"]
+RUN ["pipenv", "shell"]
 #
-#CMD ["pipenv", "run", "python", "server.py"]
-CMD python3 server.py
+CMD ["python", "server.py"]
+#CMD python3 server.py
