@@ -18,7 +18,7 @@
 
 # from config import celery
 from datetime import datetime, timedelta
-# import tasks
+
 from task import times_task, add_task, reverse_task
 
 # ------
@@ -30,6 +30,7 @@ from task import times_task, add_task, reverse_task
 def reverse(name):
     reverse_task.delay(name)
     return 'done\n'
+
 
 def add(a):
     result = int(a) + 2

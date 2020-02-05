@@ -15,7 +15,7 @@ services:
       - "example.org:127.0.0.1"
   rabbit:
     hostname: rabbit
-    image: rabbitmq
+    image: rabbitmq:management
     environment:
       - RABBITMQ_DEFAULT_USER=rabbitmq
       - RABBITMQ_DEFAULT_PASS=rabbitmq
