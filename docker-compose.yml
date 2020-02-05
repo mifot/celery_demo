@@ -24,6 +24,7 @@ services:
   worker:
     build:
       context: .
+      dockerfile: Dockerfile
     hostname: worker
     entrypoint: celery
     command: pipenv run celery -A task.celery worker --loglevel=info
