@@ -28,7 +28,7 @@ from celery import Celery
 CELERY_BROKER_URL = 'amqp://rabbitmq:rabbitmq@rabbit:5672/'
 # CELERY_RESULT_BACKEND = 'rpc://'
 # Initialize Celery
-celery = Celery('delegate', broker=CELERY_BROKER_URL)#, backend=CELERY_RESULT_BACKEND)
+celery = Celery('worker', broker=CELERY_BROKER_URL)#, backend=CELERY_RESULT_BACKEND)
 
 # ------
 
