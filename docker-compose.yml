@@ -5,7 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
 #    restart: always
-    command: pipenv run python server.py
     ports:
       - "8080:8080"
     depends_on:
@@ -28,7 +27,7 @@ services:
 #      dockerfile: Dockerfile
     hostname: worker
     entrypoint: celery
-    command: pipenv run celery -A task.celery worker --autoscale=5,2 --loglevel=info
+    command: celery -A task.celery worker --autoscale=5,2 --loglevel=info
 #    command: ./run_celery.sh
     volumes:
       - .:/app
