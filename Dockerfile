@@ -9,8 +9,8 @@ WORKDIR /app
 COPY . .
 RUN ["pipenv", "install"]
 
-RUN pipenv lock --requirements > requirements.txt
-RUN ["pip3", "install", "-r", "requirements.txt"]
+#RUN pipenv lock --requirements > requirements.txt
+#RUN ["pip3", "install", "-r", "requirements.txt"]
 
 # setup env variables to initialize database
 
@@ -19,8 +19,8 @@ RUN ["pip3", "install", "-r", "requirements.txt"]
 
 ENV FLASK_APP=server.py
 
-#RUN ["pipenv", "run", "flask", "db", "upgrade"]
+RUN ["pipenv", "run", "flask", "db", "upgrade"]
 
-#CMD ["pipenv", "run", "python", "server.py"]
+CMD ["pipenv", "run", "python", "server.py"]
 
-CMD ["python3", "server.py"]
+#CMD ["python3", "server.py"]

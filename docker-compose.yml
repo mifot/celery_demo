@@ -25,8 +25,8 @@ services:
     build:
       context: .
     hostname: worker
-    entrypoint: celery
-    command: -A delegate.celery worker --loglevel=info
+    entrypoint: pipenv run
+    command: celery -A delegate.celery worker --loglevel=info
     volumes:
       - .:/app
     links:
