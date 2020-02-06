@@ -24,11 +24,9 @@ services:
   worker:
     build:
       context: .
-#      dockerfile: Dockerfile
     hostname: worker
-    entrypoint: celery
-    command: celery -A task.celery worker --autoscale=5,2 --loglevel=info
-#    command: ./run_celery.sh
+    entrypoint: pipenv run
+    command: celery -A delegate.celery worker --loglevel=info
     volumes:
       - .:/app
     links:
