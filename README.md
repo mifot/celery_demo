@@ -35,6 +35,6 @@ http://docs.celeryproject.org/en/master/userguide/calling.html#eta-and-countdown
 https://hub.docker.com/_/celery
 
 - [] test
-[] test
+[ ] test
 
-- [x]test
+[x]test
