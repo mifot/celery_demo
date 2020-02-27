@@ -33,3 +33,8 @@ https://vinta.ws/code/run-a-celery-task-at-a-specific-time.html
 https://celery.readthedocs.io/en/latest/getting-started/first-steps-with-celery.html  
 http://docs.celeryproject.org/en/master/userguide/calling.html#eta-and-countdown  
 https://hub.docker.com/_/celery
+
+- [] test
+[] test
+
+- [x]test
