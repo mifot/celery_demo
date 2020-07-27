@@ -1,4 +1,12 @@
 FROM python:3.6
+
+ENV user ubuntu
+ 
+#RUN useradd -m -d /home/${user} ${user} \
+# && chown -R ${user} /home/${user}
+
+RUN useradd ${user}
+
 EXPOSE 8080
 RUN apt-get update && apt-get install -y python3-dev
 RUN ["pip3", "install", "pipenv"]
@@ -22,5 +30,7 @@ ENV FLASK_APP=server.py
 #RUN ["pipenv", "run", "flask", "db", "upgrade"]
 
 #CMD ["pipenv", "run", "python", "server.py"]
+
+USER ${user}
 
 CMD ["python3", "server.py"]
