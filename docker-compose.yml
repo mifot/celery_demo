@@ -21,10 +21,10 @@ services:
       - RABBITMQ_DEFAULT_PASS=rabbitmq
     ports:
       - "5673:5672"
-  worker:
+  worker1:
     build:
       context: .
-    hostname: worker
+    hostname: worker1
     entrypoint: celery
     command: -A delegate.celery worker --loglevel=info
     volumes:
@@ -33,3 +33,17 @@ services:
       - rabbit
     depends_on:
       - rabbit
+  worker2:
+    build:
+      context: .
+    hostname: worker2
+    entrypoint: celery
+    command: -A delegate.celery worker --loglevel=info
+    volumes:
+      - .:/app
+    links:
+      - rabbit
+    depends_on:
+      - rabbit
+    
+
