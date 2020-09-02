@@ -22,7 +22,7 @@ RUN ["pip3", "install", "-r", "requirements.txt"]
 
 # setup env variables to initialize database
 
-#ENV RABBITMQ_URL='amqp://rabbitmq:rabbitmq@rabbit:5672/'
+ENV RABBITMQ_URL='amqp://rabbitmq:rabbitmq@rabbit:5672/'
 #ENV DATABASE_URL=
 
 ENV FLASK_APP=server.py
