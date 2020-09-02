@@ -1,36 +1,6 @@
-# from datetime import datetime, timedelta
-# import tasks
-#
-#
-# def reverse(name):
-#     tasks.reverse.delay(name)
-#     return 'done\n'
-#
-#
-# def add(a):
-#     a2 = a + 2
-#     time = datetime.utcnow() + timedelta(seconds=30)
-#     tasks.add.apply_async((2, int(a)), eta=time)
-#     return a2
-#
-#
-# version 2
 
-# from config import celery
+from config import celery
 from datetime import datetime, timedelta
-# import tasks
-
-# ------
-# to do test docker-compose
-
-from celery import Celery
-
-CELERY_BROKER_URL = 'amqp://rabbitmq:rabbitmq@rabbit:5672/'
-# CELERY_RESULT_BACKEND = 'rpc://'
-# Initialize Celery
-celery = Celery('worker', broker=CELERY_BROKER_URL)#, backend=CELERY_RESULT_BACKEND)
-
-# ------
 
 
 def reverse(name):
@@ -64,6 +34,8 @@ def add_task(x, y):
 
 @celery.task
 def reverse_task(string):
+    time = datetime.utcnow() + timedelta(seconds=15)
+    times_task.apply_async((2, 1), eta=time)
     return string[::-1]
 
 
