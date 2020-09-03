@@ -26,7 +26,7 @@ services:
       context: .
     hostname: worker1
     entrypoint: celery
-    command: -A delegate.celery worker --loglevel=info
+    command: -A delegate.celery worker --autoscale=6,3 --loglevel=info
     volumes:
       - .:/app
     links:
@@ -38,12 +38,10 @@ services:
       context: .
     hostname: worker2
     entrypoint: celery
-    command: -A delegate.celery worker --loglevel=info
+    command: -A delegate.celery worker --autoscale=6,3 --loglevel=info
     volumes:
       - .:/app
     links:
       - rabbit
     depends_on:
       - rabbit
-    
-
