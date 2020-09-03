@@ -26,7 +26,7 @@ services:
       context: .
     hostname: worker1
     entrypoint: celery
-    command: -A delegate.celery worker --autoscale=6,3 -l info -Q celery
+    command: -A delegate.celery worker --autoscale=6,3 -l info
     volumes:
       - .:/app
     links:
@@ -38,7 +38,7 @@ services:
       context: .
     hostname: worker2
     entrypoint: celery
-    command: -A delegate.celery worker --autoscale=6,3 -l info -Q celery
+    command: -A delegate.celery worker --autoscale=6,3 -l info
     volumes:
       - .:/app
     links:
