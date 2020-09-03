@@ -1,4 +1,8 @@
 -) to run multiple celery workers, hostnames for each of one must be unique!!!
 see: https://docs.celeryproject.org/en/stable/userguide/workers.html#starting-the-worker
 for containers as a result in docker-compose file there are multiple workers, but with different hostnames,
-rabbitmq distributes tasks to workers, probably using round-robin algorithm  
+rabbitmq distributes tasks to workers, probably using round-robin algorithm
+
+
+to monitor rabbitmq queues, run bash shell on the container and execute command like below:
+$ rabbitmqctl list_queues
