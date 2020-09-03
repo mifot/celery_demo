@@ -23,4 +23,5 @@ app = Flask(__name__)
 app.config['CELERY_RESULT_BACKEND'] = 'amqp://localhost//'
 app.config['CELERY_BROKER_URL'] = 'amqp://rabbitmq:rabbitmq@rabbit:5672/'
 celery = make_celery(app)
+app.config.task_default_queue = 'celery'
 
